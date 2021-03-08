@@ -57,6 +57,7 @@ class VideoDataset(BaseDataset):
                     onehot[label] = 1.0
                 else:
                     filename, label = line_split
+                   # print(filename)
                     label = int(label)
                 if self.data_prefix is not None:
                     filename = osp.join(self.data_prefix, filename)

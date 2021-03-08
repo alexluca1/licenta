@@ -12,9 +12,11 @@ def convert_avi_to_mp4(avi_file_path, output_name):
 
 for path, subdirs, files in os.walk(root):
     for name in files:
-        all_avis.append(os.path.join(path, name))
+        if '.avi' in name:
+            all_avis.append(os.path.join(path, name))
 
 
 for avi_file in all_avis:
-    output_name= avi_file[:-4]+'.mp4'
+    output_name= avi_file[:-4]+'.mp4'   
+    print(output_name)	
     convert_avi_to_mp4(avi_file, output_name)
